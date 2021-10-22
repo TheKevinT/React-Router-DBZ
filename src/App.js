@@ -1,9 +1,10 @@
 import React from "react";
+import LoginRouter from "./Routes/LoginRouter";
 
 const App = () => {
   return (
     <>
-      <h1>Proyecto</h1>
+      <LoginRouter />
     </>
   );
 };
