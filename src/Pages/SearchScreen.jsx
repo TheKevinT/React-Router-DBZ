@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef} from "react";
 import { useLocation } from "react-router";
 import queryString from "query-string";
 import { Characters } from "../models/Characters";
 import Card from "../Components/Card";
 
 const SearchScreen = ({ history }) => {
+  const  textInput = useRef(null);
   const location = useLocation();
   const { search = "" } = queryString.parse(location.search);
 
@@ -17,6 +18,7 @@ const SearchScreen = ({ history }) => {
   };
   const _handleSubmit = (e) => {
     e.preventDefault();
+    textInput.current.reset();
     history.push(`?search=${inputValue}`);
   };
 
@@ -42,7 +44,7 @@ const SearchScreen = ({ history }) => {
         <h1 className="text-center">Search</h1>
         <div className="row">
           <div className="col-6">
-            <form onSubmit={_handleSubmit}>
+            <form onSubmit={_handleSubmit}  ref={textInput}>
               <label className="form-label w-100">
                 Character:
                 <input
@@ -50,7 +52,6 @@ const SearchScreen = ({ history }) => {
                   type="text"
                   placeholder="Name Character"
                   autoComplete="off"
-                  value={inputValue}
                   onChange={_handleChange}
                 />
               </label>
