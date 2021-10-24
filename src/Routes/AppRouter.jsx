@@ -15,7 +15,7 @@ const AppRouter = () => {
         <Route exact path="/women" component={WomenScreen} />
         <Route exact path="/search" component={SearchScreen} />
         <Route exact path="/character/:id" component={CharacterScreen} />
-        {/* <Redirect to="/men" /> */}
+        <Redirect to="/men" />
       </Switch>
     </>
   );

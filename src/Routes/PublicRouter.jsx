@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 
-const PrivateRouter = ({ auth,component: Component, ...rest }) => {
+const PublicRouter = ({ auth,component: Component, ...rest }) => {
   return (
     <>
       <Route {...rest} component={() => <Component />} />
@@ -9,4 +9,4 @@ const PrivateRouter = ({ auth,component: Component, ...rest }) => {
   );
 };
 
-export default PrivateRouter;
+export default PublicRouter;
