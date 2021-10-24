@@ -15,7 +15,7 @@ const Card = ({ id, name, type }) => {
         <img className="card-img-top" src={path} alt={id} />
 
         <div className="card-body">
-          <h3 className="card-title">{name}</h3>
+          <h3 className="card-title text-black">{name}</h3>
           <p className="card-text">
             <Link className="card-link" to={`/character/${id}`}>
               Ver Más...
