@@ -1,9 +1,6 @@
 import React from "react";
-import { useHistory } from "react-router";
 
-const LoginScreen = () => {
-  const history = useHistory();
-
+const LoginScreen = ({ history }) => {
   const _handleLogin = () => {
     history.replace("/men");
   };
