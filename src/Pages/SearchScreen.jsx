@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router";
+import queryString from "query-string";
 
 const SearchScreen = ({ history }) => {
-  const [inputValue, setInputValue] = useState("");
+  const location = useLocation();
+  const { search = "" } = queryString.parse(location.search);
+
+  const [inputValue, setInputValue] = useState(search);
 
   const _handleChange = (e) => {
     const value = e.target.value;
